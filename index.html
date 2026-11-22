@@ -188,6 +188,21 @@
 
     </main>
 
+    <div class="spotify-mini-player" id="spotifyMiniPlayer" aria-label="Pemutar musik Spotify">
+        <div class="spotify-mini-info">
+            <span class="spotify-mini-label">♫ NOW PLAYING</span>
+            <span class="spotify-mini-title" id="spotifyTrackTitle">Adore You — Miley Cyrus</span>
+        </div>
+        <div class="spotify-mini-controls">
+            <button type="button" id="spotifyPrev" class="spotify-skip" aria-label="Lagu sebelumnya">‹</button>
+            <button type="button" id="spotifyNext" class="spotify-skip" aria-label="Lagu berikutnya">›</button>
+        </div>
+        <iframe id="spotifyEmbed" title="Spotify music player"
+            src="https://open.spotify.com/embed/track/5AnCLGg35ziFOloEnXK4uu?utm_source=generator&theme=0"
+            width="100%" height="80" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"></iframe>
+    </div>
+
     <script src="script.js"></script>
 </body>
 

@@ -367,3 +367,29 @@ document.addEventListener('DOMContentLoaded', () => {
     new ParticleSystem();
     initMouseTrail();
 });
+
+
+// Compact Spotify playlist navigation (three supplied tracks)
+const spotifyTracks = [
+    { id: '5AnCLGg35ziFOloEnXK4uu', title: 'Adore You — Miley Cyrus' },
+    { id: '5pvlSx0s2w3nKuyfrFnYBZ', title: 'To the Bone — Pamungkas' },
+    { id: '2qPSa6HXjzwa9sLhNGpA1T', title: 'Home — Edith Whiskers' }
+];
+let spotifyTrackIndex = 0;
+
+function setSpotifyTrack(index) {
+    const frame = document.getElementById('spotifyEmbed');
+    const title = document.getElementById('spotifyTrackTitle');
+    if (!frame || !title) return;
+    spotifyTrackIndex = (index + spotifyTracks.length) % spotifyTracks.length;
+    const track = spotifyTracks[spotifyTrackIndex];
+    title.textContent = track.title;
+    frame.src = `https://open.spotify.com/embed/track/${track.id}?utm_source=generator&theme=0`;
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const prev = document.getElementById('spotifyPrev');
+    const next = document.getElementById('spotifyNext');
+    if (prev) prev.addEventListener('click', () => setSpotifyTrack(spotifyTrackIndex - 1));
+    if (next) next.addEventListener('click', () => setSpotifyTrack(spotifyTrackIndex + 1));
+});
