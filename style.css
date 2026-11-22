@@ -1650,3 +1650,37 @@ body {
     }
     .spotify-mini-player iframe { height: 80px; }
 }
+
+/* Cute teddy bear peeking in and out from the screen edge */
+.teddy-peek {
+    position: fixed;
+    z-index: 950;
+    right: -8px;
+    bottom: 142px;
+    width: 142px;
+    height: auto;
+    display: block;
+    pointer-events: none;
+    user-select: none;
+    filter: drop-shadow(0 5px 12px rgba(190, 80, 130, 0.16));
+    transform: translateX(72%);
+    animation: teddyPeekInOut 5.2s ease-in-out infinite;
+}
+
+@keyframes teddyPeekInOut {
+    0%, 12% { transform: translateX(72%); }
+    28%, 58% { transform: translateX(0); }
+    72%, 100% { transform: translateX(72%); }
+}
+
+@media (max-width: 480px) {
+    .teddy-peek {
+        width: 112px;
+        right: -5px;
+        bottom: 132px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .teddy-peek { animation: none; transform: translateX(0); }
+}
