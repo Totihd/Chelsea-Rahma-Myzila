@@ -393,3 +393,18 @@ document.addEventListener('DOMContentLoaded', () => {
     if (prev) prev.addEventListener('click', () => setSpotifyTrack(spotifyTrackIndex - 1));
     if (next) next.addEventListener('click', () => setSpotifyTrack(spotifyTrackIndex + 1));
 });
+
+
+// Local-only surprise gate: never reads, validates, sends, or stores the entered values.
+document.addEventListener('DOMContentLoaded', () => {
+    const loginForm = document.getElementById('surpriseLoginForm');
+    const loginGate = document.getElementById('loginGate');
+    if (!loginForm || !loginGate) return;
+
+    loginForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        document.body.classList.remove('login-locked');
+        loginGate.classList.add('login-gate-leaving');
+        window.setTimeout(() => loginGate.remove(), 550);
+    });
+});

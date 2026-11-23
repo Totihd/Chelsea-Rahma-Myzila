@@ -14,7 +14,24 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="login-locked">
+    <section class="login-gate" id="loginGate" aria-labelledby="loginTitle">
+        <div class="login-card">
+            <div class="login-bear" aria-hidden="true">🧸</div>
+            <div class="login-sparkle" aria-hidden="true">✦</div>
+            <p class="login-kicker">A LITTLE SURPRISE FOR YOU</p>
+            <h1 id="loginTitle">Hiii, Kakaa! 💗</h1>
+            <p class="login-description">Sebelum masuk, isi dulu yaa~</p>
+            <form id="surpriseLoginForm" autocomplete="off" novalidate>
+                <label class="login-label" for="loginName">Nama lengkap</label>
+                <input class="login-input" id="loginName" name="displayName" type="text" placeholder="Tulis nama panjang kamu" autocomplete="off">
+                <label class="login-label" for="loginPass">Kata sandi</label>
+                <input class="login-input" id="loginPass" name="secret" type="password" placeholder="Tuliskan tanggal lahir kamu" autocomplete="new-password">
+                <button class="login-submit" type="submit">MASUK <span>♡</span></button>
+            </form>
+            <p class="login-privacy">Tenang, isian ini tidak dikirim atau disimpan. ✨</p>
+        </div>
+    </section>
     <div class="bg-gradient"></div>
     <div class="bg-shapes">
         <div class="shape shape-1"></div>
